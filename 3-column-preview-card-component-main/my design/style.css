@@ -1,0 +1,116 @@
+@import url("https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: hsl(0, 0%, 95%);
+  overflow-x: hidden;
+}
+#sedans {
+  background-color: hsl(31, 77%, 52%);
+  border-radius: 10px 10px 0px 0px;
+  padding: 100px 50px;
+  margin-top: 100px;
+  width: 375px;
+  height: 533px;
+}
+h1 {
+  color: hsl(0, 0%, 95%);
+  font-family: "Big Shoulders Display", cursive;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+p {
+  color: hsla(0, 0%, 100%, 0.75);
+  font-weight: 400;
+  font-family: "Lexend Deca", sans-serif;
+  font-size: 15px;
+}
+#sedans svg,
+#suv svg,
+#luxury svg {
+  margin-bottom: 50px;
+}
+#suv {
+  background-color: hsl(184, 100%, 22%);
+  padding: 100px 50px;
+  width: 375px;
+  height: 533px;
+}
+#luxury {
+  background-color: hsl(179, 100%, 13%);
+  padding: 100px 50px;
+  border-radius: 0px 0px 10px 10px;
+  width: 375px;
+  height: 533px;
+}
+button {
+  color: hsl(31, 77%, 52%);
+  padding: 15px 30px;
+  border-radius: 20px;
+  border: none;
+  font-family: "Lexend Deca", sans-serif;
+  margin-top: 30px;
+}
+#sedans button {
+  color: hsl(31, 77%, 52%);
+}
+#luxury button {
+  color: hsl(179, 100%, 13%);
+}
+#suv button {
+  color: hsl(184, 100%, 22%);
+}
+
+#suv button:hover,
+#luxury button:hover,
+#sedans button:hover {
+  transition: all 0.4s linear;
+  background: none;
+  color: white;
+  border: 2px solid white;
+  cursor: pointer;
+}
+.attribution {
+  font-family: "Lexend Deca", sans-serif;
+}
+.attribution a {
+  color: green;
+}
+.container {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+}
+#flexcont {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+}
+@media screen and (min-width: 960px) {
+  .container {
+    flex-direction: row;
+  }
+  #flexcont {
+    height: 100vh;
+  }
+  #sedans {
+    margin-top: 0px;
+    border-radius: 10px 0px 0px 10px;
+  }
+  #luxury {
+    border-radius: 0px 10px 10px 0px;
+  }
+
+  button {
+    position: absolute;
+    bottom: 50px;
+    margin-top: 0;
+  }
+}
