@@ -1,0 +1,170 @@
+/* variables and reset styles*/
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500&display=swap");
+:root {
+  --Moderate-violet: hsl(263, 55%, 52%);
+  --Very-dark-grayish-blue: hsl(217, 19%, 35%);
+  --Very-dark-blackish-blue: hsl(219, 29%, 14%);
+  --White: hsl(0, 0%, 100%);
+  --Light-gray: hsl(0, 0%, 81%);
+  --Light-grayish-blue: hsl(210, 46%, 95%);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* basic styles */
+body {
+  font-family: "Barlow Semi Condensed", sans-serif;
+  background-color: var(--Light-grayish-blue);
+}
+.logo {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+#daniel .logo {
+  overflow: hidden;
+  background-image: url(images/image-daniel.jpg);
+  background-size: cover;
+  border: 3px solid hsl(263, 55%, 70%);
+}
+h1 {
+  color: white;
+  font-size: 13px;
+  font-weight: 500;
+}
+.ver {
+  opacity: 0.5;
+  font-weight: 500;
+}
+.bigh {
+  font-weight: 600;
+  font-size: 20px;
+}
+article {
+  color: var(--Light-gray);
+  opacity: 0.7;
+  font-weight: 500;
+  font-size: 13px;
+}
+#jonathan .logo {
+  background-size: cover;
+  border: 3px solid var(--White);
+  overflow: hidden;
+  background-image: url(images/image-jonathan.jpg);
+}
+#Jeanette .logo {
+  background-size: cover;
+  border: 3px solid var(--White);
+  overflow: hidden;
+  background-image: url(images/image-jeanette.jpg);
+}
+#patrick .logo {
+  background-size: cover;
+  border: 3px solid var(--Moderate-violet);
+  overflow: hidden;
+  background-image: url(images/image-patrick.jpg);
+}
+#kira .logo {
+  background-size: cover;
+  border: 3px solid var(--White);
+  overflow: hidden;
+  background-image: url(images/image-kira.jpg);
+}
+#daniel {
+  background-color: var(--Moderate-violet);
+  position: relative;
+}
+#jonathan {
+  background-color: var(--Very-dark-grayish-blue);
+}
+#Jeanette {
+  background-color: var(--White);
+}
+#Jeanette h1,
+#kira h1 {
+  color: var(--Very-dark-blackish-blue);
+}
+#patrick {
+  background-color: var(--Very-dark-blackish-blue);
+}
+#kira {
+  background-color: var(--White);
+}
+#jonathan,
+#daniel,
+#Jeanette,
+#patrick,
+#kira {
+  border-radius: 10px;
+  padding: 50px;
+  margin: 20px 50px;
+}
+.flex {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.cont {
+  margin-left: 20px;
+}
+#Jeanette article,
+#kira article {
+  color: var(--Very-dark-grayish-blue);
+}
+.bigh {
+  margin-bottom: 20px;
+}
+.attribution a {
+  color: green;
+}
+svg {
+  position: absolute;
+  right: 30px;
+  top: 0px;
+}
+
+/* desktop */
+@media screen and (min-width: 1200px) {
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+      "daniel daniel jonathan kira"
+      "jeanette patrick patrick kira";
+  }
+
+  #daniel {
+    grid-area: daniel;
+  }
+  #jonathan {
+    grid-area: jonathan;
+  }
+  #kira {
+    grid-area: kira;
+  }
+  #Jeanette {
+    grid-area: jeanette;
+  }
+  #patrick {
+    grid-area: patrick;
+  }
+  #jonathan,
+  #daniel,
+  #Jeanette,
+  #patrick,
+  #kira {
+    padding: 50px;
+    margin: 20px;
+  }
+  #center {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+  }
+  svg {
+    right: 100px;
+  }
+}
