@@ -1,0 +1,134 @@
+@import url("https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap");
+/* font-family: 'Karla', sans-serif;
+weights: 400, 700 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --cyan: hsl(179, 62%, 43%);
+  --bright-yellow: hsl(71, 73%, 54%);
+  --light-gray: hsl(204, 43%, 93%);
+  --grayish-blue: hsl(218, 22%, 67%);
+}
+/* typography */
+body {
+  font-family: "Karla", sans-serif;
+  font-weight: 400;
+}
+h1 {
+  color: var(--cyan);
+  padding-bottom: 25px;
+}
+#first h2 {
+  color: var(--bright-yellow);
+  padding-bottom: 20px;
+  font-size: 1.2rem;
+}
+#sec h2 {
+  color: white;
+  padding-bottom: 20px;
+  font-size: 1.4rem;
+}
+p {
+  color: var(--grayish-blue);
+  line-height: 1.7;
+}
+#price {
+  color: var(--grayish-blue);
+  padding-bottom: 10px;
+  font-weight: normal;
+  font-size: 12px;
+}
+#price span {
+  color: white;
+}
+h4 {
+  color: white;
+  padding-bottom: 20px;
+}
+h3 {
+  font-weight: normal;
+  color: white;
+}
+#third h3 {
+  padding-bottom: 20px;
+  font-weight: bold;
+}
+h5 {
+  color: var(--light-gray);
+  font-weight: normal;
+  font-size: 1rem;
+  padding: 2px 0;
+}
+/* base styles */
+body {
+  background-color: var(--light-gray);
+  width: 100vw;
+  height: 100vh;
+}
+#first {
+  background-color: white;
+  padding: 20px;
+  max-width: 500px;
+  border-radius: 10px 10px 0 0;
+}
+#center {
+  padding: 100px 75px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+#sec {
+  background-color: var(--cyan);
+  padding: 50px;
+}
+span {
+  font-size: 2rem;
+}
+button {
+  white-space: nowrap;
+  padding: 18px 60px;
+  background-color: var(--bright-yellow);
+  border: none;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+}
+#third {
+  background-color: hsl(179, 47%, 52%);
+  padding: 50px;
+  border-radius: 0 0 10px 10px;
+}
+#grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(auto-fill, minmax(200px, 1fr));
+}
+@media screen and (min-width: 1200px) {
+  #grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 0.7fr 1fr;
+  }
+  #first {
+    grid-column: span 2;
+    max-width: 600px;
+  }
+  #sec {
+    border-radius: 0px 0px 0px 10px;
+    display: flex;
+    flex-direction: column;
+    max-width: 300px;
+  }
+  #third {
+    border-radius: 0px 0px 10px 0px;
+    max-width: 300px;
+  }
+  button:hover {
+    transition: all 0.4s linear;
+    border: 1px solid white;
+    background: none;
+  }
+}
