@@ -1,0 +1,119 @@
+/* fonts */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap");
+/* variables */
+:root {
+  --mainbg: hsl(233, 47%, 7%);
+  --cardbg: hsl(244, 38%, 16%);
+  --accent: hsl(277, 64%, 61%);
+  --white: hsl(0, 0%, 100%);
+  --par: hsla(0, 0%, 100%, 0.75);
+  --stats: hsla(0, 0%, 100%, 0.6);
+}
+/* basic stuff*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: var(--mainbg);
+}
+#picture {
+  background-image: url(images/image-header-mobile.jpg);
+  border-radius: 10px 10px 0 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-blend-mode: multiply;
+  background-color: var(--accent);
+}
+#grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 2fr;
+}
+#cont {
+  background-color: var(--cardbg);
+  border-radius: 0 0 10px 10px;
+  padding: 20px 50px;
+  max-width: 600px;
+}
+#center {
+  display: flex;
+  padding: 100px 75px 0 75px;
+  height: 100vh;
+  width: 100vw;
+}
+#flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.wrapper {
+  padding: 15px;
+}
+/* typography */
+h1 {
+  font-family: "Lexend Deca", sans-serif;
+  color: var(--white);
+  font-size: 1.7rem;
+  text-align: center;
+  padding-bottom: 15px;
+}
+span {
+  color: var(--accent);
+}
+p {
+  color: var(--par);
+  text-align: center;
+  font-size: 15px;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  padding-bottom: 20px;
+}
+.wrapper {
+  font-family: "Inter", sans-serif;
+  text-align: center;
+}
+h3 {
+  color: var(--white);
+  padding-bottom: 5px;
+}
+h5 {
+  color: var(--stats);
+  font-weight: normal;
+  text-transform: uppercase;
+}
+#flex:last-child {
+  padding-bottom: 20px;
+}
+#center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media screen and (min-width: 1200px) {
+  #grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+  }
+  #picture {
+    background-image: url(images/image-header-desktop.jpg);
+    order: 2;
+    border-radius: 0 10px 10px 0;
+  }
+  #cont {
+    border-radius: 10px 0 0 10px;
+    padding: 100px 100px;
+  }
+  #flex {
+    flex-direction: row;
+  }
+  .wrapper {
+    padding: 15px 40px;
+  }
+  #center {
+    padding: 0;
+  }
+}
