@@ -1,0 +1,147 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap");
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+body {
+  background-color: #fafafa;
+  padding: 10vh 5vw 5vh 5vw;
+}
+h1 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  color: #4c4e61;
+  text-align: center;
+}
+h1:first-of-type {
+  font-family: "Poppins", sans-serif;
+  font-weight: 200;
+}
+p {
+  text-align: center;
+  font-size: 15px;
+  font-family: "Poppins", sans-serif;
+  color: #a3a5ae;
+  font-weight: 400;
+  padding: 0 20px;
+  margin-bottom: 6vh;
+}
+.card {
+  background-color: white;
+  border-radius: 10px;
+  padding: 5vh 7vw 5vh;
+  box-shadow: 5px 5px 7px #a3a5ae;
+  margin-bottom: 3vh;
+  font-family: "Poppins", sans-serif;
+  color: #4c4e61;
+  position: relative;
+  max-width: 400px;
+  border-top: 5px solid #45d3d3;
+}
+.card h4 {
+  font-weight: 200;
+  padding-bottom: 3vh;
+  max-width: 30ch;
+}
+.card .icon {
+  position: absolute;
+  bottom: 10%;
+  right: 10%;
+}
+.card--red {
+  border-color: #ea5353;
+}
+.card--orange {
+  border-color: #fcaf4a;
+}
+.card--blue {
+  border-color: #549ef2;
+}
+.flex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+@media screen and (min-width: 1200px) {
+  .flex {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .card {
+    margin: 0px 25px;
+    padding: 7vh 3vw;
+  }
+
+  .card--red {
+    margin-bottom: 25px;
+  }
+}
+@media screen and (max-height: 900px) {
+  .card h4 {
+    margin-bottom: 50px;
+  }
+}
