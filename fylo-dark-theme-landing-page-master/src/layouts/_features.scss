@@ -1,0 +1,54 @@
+@use "../abstracts" as *;
+.section--features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+}
+.feature {
+  h1 {
+    color: $White;
+    margin-bottom: 10px;
+  }
+  p {
+    max-width: 35ch;
+    color: $White;
+    margin-bottom: 75px;
+  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  img {
+    margin-bottom: 30px;
+  }
+}
+@media screen and (min-width: 1000px) {
+  .section--features {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+  }
+  .feature {
+    &--access {
+      grid-column: 2/3;
+      grid-row: 1;
+    }
+    &--security {
+      grid-column: 3/4;
+      grid-row: 1;
+    }
+    &--collaboration {
+      grid-column: 2/3;
+      grid-row: 2;
+    }
+    &--any {
+      grid-column: 3/4;
+      grid-row: 2;
+    }
+  }
+}
+@media screen and (max-width: 500px) {
+  .section--features {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+}

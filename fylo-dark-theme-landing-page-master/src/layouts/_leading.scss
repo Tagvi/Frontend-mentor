@@ -1,0 +1,128 @@
+@use "../abstracts" as *;
+@use "../base/" as *;
+body {
+  background-color: $mainbg;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+.section {
+  &--leading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    background: linear-gradient(180deg, $imsbg 0%, $imsbg 75%, $mainbg 75%);
+    position: relative;
+    margin-bottom: 200px;
+    overflow: hidden;
+    //curves
+    .svg--intro {
+      z-index: 1;
+      padding: 20px;
+    }
+    &::before {
+      content: "";
+      background-image: url(./images/bg-curvy-mobile.svg);
+      width: 100vw;
+      height: 100%;
+      position: absolute;
+      background-repeat: no-repeat;
+      background-size: contain;
+      top: 300px;
+    }
+    // text and buttons
+    .wrapper--centering {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      * + * {
+        margin-top: 20px;
+      }
+      h1 {
+        font-family: $ra;
+        color: $White;
+        text-align: center;
+        z-index: 2;
+        font-size: 1.5rem;
+      }
+      p {
+        color: $White;
+        text-align: center;
+        font-family: $os;
+        max-width: 40ch;
+        font-size: $fs;
+      }
+      a button {
+        background: $grad;
+        border: none;
+        color: $White;
+        font-family: $ra;
+        width: 250px;
+        height: 50px;
+        border-radius: 30px;
+        cursor: pointer;
+        &:hover {
+          transition: background 1s linear;
+          background: $Cyan;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 500px) {
+  .section--leading {
+    &::before {
+      top: 270px;
+    }
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .section--leading {
+    &::before {
+      top: 250px;
+    }
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .section--leading {
+    background: $imsbg;
+    .wrapper--centering {
+      h1 {
+        font-size: 2.8rem;
+        max-width: 30ch;
+      }
+      p {
+        max-width: 60ch;
+        font-size: 1.3rem;
+      }
+    }
+    &::before {
+      background-image: url(./images/bg-curvy-desktop.svg);
+      top: 550px;
+    }
+  }
+}
+@media screen and (min-width: 1440px) {
+  .section--leading {
+    &::before {
+      top: 445px;
+    }
+  }
+}
+@media screen and (min-width: 1500px) {
+  .section--leading {
+    &::before {
+      top: 450px;
+    }
+  }
+}
+@media screen and (min-width: 1700px) {
+  .section--leading {
+    &::before {
+      top: 350px;
+    }
+  }
+}

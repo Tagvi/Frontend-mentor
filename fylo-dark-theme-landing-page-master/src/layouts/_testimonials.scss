@@ -1,0 +1,61 @@
+@use "../abstracts" as *;
+.section--testimonials {
+  display: grid;
+  padding: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 400px));
+  gap: 20px;
+  place-content: center;
+  margin-bottom: 250px;
+  .testimonial {
+    border-radius: 5px;
+    padding: 30px;
+    color: $White;
+    background: $testbg;
+    p {
+      max-width: 40ch;
+    }
+    .wrapper--flex {
+      margin-top: 20px;
+      display: flex;
+      align-items: center;
+      h3 {
+        font-size: 13px;
+      }
+      h5 {
+        margin: 0;
+        font-weight: $m;
+      }
+      img {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        margin-right: 15px;
+      }
+    }
+    &--Satish {
+      position: relative;
+      &::before {
+        content: "";
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        background-image: url(./images/bg-quotes.png);
+        background-repeat: no-repeat;
+        top: -50px;
+        left: 0;
+      }
+    }
+  }
+}
+@media screen and (min-width: 1200px) {
+  .section--testimonials {
+    gap: 50px;
+    .testimonial--Satish {
+      &::before {
+        top: -30px;
+        left: -15px;
+        z-index: -1;
+      }
+    }
+  }
+}

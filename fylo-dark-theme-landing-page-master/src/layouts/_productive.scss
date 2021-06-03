@@ -1,0 +1,44 @@
+@use "../abstracts" as *;
+.section--productive {
+  padding: 20px;
+  margin-bottom: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  img {
+    padding: 20px;
+  }
+  h1 {
+    font-size: 1.3rem;
+    color: $White;
+    margin-bottom: 25px;
+  }
+  p {
+    color: $White;
+    margin-bottom: 15px;
+    max-width: 45ch;
+  }
+  a {
+    color: $Cyan;
+    // text-underline-offset: 7px; can be applied but for support purposes I'll use more traditional method
+    text-decoration: none;
+    border-bottom: 1px solid $Cyan;
+    padding-bottom: 3px;
+    font-size: 14px;
+    position: relative;
+    &:hover {
+      transition: all 0.4s linear;
+      color: darken($White, 20%);
+      border-color: darken($White, 20%);
+    }
+  }
+}
+@media screen and (min-width: 1200px) {
+  .section--productive {
+    flex-direction: row;
+    justify-content: center;
+    .wrapper {
+      margin-left: 20px;
+    }
+  }
+}

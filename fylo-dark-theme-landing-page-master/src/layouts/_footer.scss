@@ -1,0 +1,196 @@
+@use "../abstracts" as *;
+footer {
+  padding: 20px;
+  padding-top: 200px;
+  background-color: $footerbg;
+  position: relative;
+  .wrapper--main-flex {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .logo {
+    margin-bottom: 50px;
+  }
+  .wrapper--flex {
+    margin-bottom: 15px;
+    display: flex;
+    p {
+      color: $White;
+      font-family: $os;
+    }
+    &.location {
+      p {
+        max-width: 30ch;
+      }
+    }
+    img {
+      width: 15px;
+      height: 20px;
+      margin-right: 20px;
+      margin-top: 5px;
+    }
+    &.phone {
+      align-items: flex-start;
+      img {
+        width: 15px;
+        height: 15px;
+      }
+    }
+    &.email {
+      align-items: center;
+      img {
+        width: 20px;
+        height: 15px;
+      }
+    }
+  }
+  ul {
+    list-style: none;
+
+    padding-left: 0;
+    line-height: 2.5;
+    a {
+      color: darken($White, 20%);
+      text-decoration: none;
+      &:hover {
+        color: $White;
+        font-weight: $b;
+      }
+    }
+  }
+  .social-media {
+    width: 125px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    * + * {
+      margin-left: 10px;
+    }
+    svg {
+      padding: 7px;
+      border: 1px solid $White;
+      border-radius: 50%;
+      width: 34px;
+      height: 34px;
+      &:hover {
+        transition: all 0.4s linear;
+        border: 1px solid $Cyan;
+        fill: $Cyan !important ;
+      }
+    }
+  }
+  .signup {
+    background-color: $imsbg;
+    width: 90%;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 5px 5px 10px hsla(0, 0%, 0%, 50%);
+    position: absolute;
+    top: -150px;
+    max-width: 600px;
+    right: 50%;
+    transform: translateX(50%);
+    .wrapper--flex-sbs {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+    }
+    h2 {
+      color: $White;
+      text-align: center;
+      font-weight: $ra;
+      margin-bottom: 10px;
+    }
+    p {
+      text-align: center;
+      color: $White;
+      font-family: $os;
+      margin-bottom: 20px;
+      max-width: 40ch;
+    }
+    input {
+      height: 50px;
+      border-radius: 30px;
+      border: none;
+      padding: 10px;
+      width: 90%;
+      &:focus-visible {
+        outline: none;
+      }
+      &[placeholder] {
+        font-size: 12px;
+        padding-left: 25px;
+        color: lighten(black, 60%);
+      }
+      &[type="submit"] {
+        background-image: $grad;
+        margin-top: 25px;
+        color: white;
+        font-weight: $b;
+        cursor: pointer;
+        &:hover {
+          transition: background-image 1s linear;
+          background-image: linear-gradient($Cyan, $Cyan);
+        }
+      }
+    }
+    .error {
+      color: $Light-Red;
+      margin-top: 5%;
+    }
+    .hidden {
+      display: none;
+    }
+  }
+}
+@media screen and (min-width: 750px) {
+  footer {
+    .wrapper--main-flex {
+      flex-flow: row wrap;
+      flex-direction: row;
+      justify-content: space-around;
+      ul {
+        margin: 0;
+      }
+      .col5 {
+        margin: 0;
+      }
+    }
+  }
+}
+@media screen and (min-width: 1200px) {
+  footer {
+    padding: 200px 250px 100px;
+    // .wrapper--flex {
+    //   justify-content: center;
+    //   align-items: center;
+    // }
+
+    .signup .wrapper--flex-sbs {
+      flex-direction: row;
+      justify-content: center;
+      input[type="submit"] {
+        margin-top: 0;
+        width: 30%;
+        margin-left: 50px;
+      }
+      input[type="email"] {
+        width: 50%;
+      }
+    }
+    .signup {
+      max-width: 900px;
+      padding: 50px;
+      p {
+        max-width: 70ch;
+      }
+    }
+  }
+}

@@ -1,0 +1,42 @@
+@use "../abstracts" as *;
+nav {
+  background-color: $imsbg;
+  padding: 20px;
+  ul {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 0;
+    align-items: center;
+  }
+  .logo--link {
+    flex-basis: 40%;
+  }
+  .links--text {
+    display: flex;
+    flex-basis: 60%;
+    justify-content: space-evenly;
+
+    a {
+      color: darken(white, 30%);
+    }
+    a:hover {
+      transition: all 0.4s linear;
+      text-decoration: underline;
+      color: $White;
+    }
+  }
+  .logo {
+    width: 100px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  nav {
+    padding: 50px;
+    .logo--link {
+      flex-basis: 80%;
+    }
+    .links--text {
+      flex-basis: 20%;
+    }
+  }
+}
