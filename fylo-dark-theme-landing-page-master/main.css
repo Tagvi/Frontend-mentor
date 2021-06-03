@@ -1,0 +1,581 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap");
+nav {
+  background-color: #1c2431;
+  padding: 20px;
+}
+nav ul {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 0;
+  align-items: center;
+}
+nav .logo--link {
+  flex-basis: 40%;
+}
+nav .links--text {
+  display: flex;
+  flex-basis: 60%;
+  justify-content: space-evenly;
+}
+nav .links--text a {
+  color: #b3b3b3;
+}
+nav .links--text a:hover {
+  transition: all 0.4s linear;
+  text-decoration: underline;
+  color: white;
+}
+nav .logo {
+  width: 100px;
+}
+
+@media screen and (min-width: 1200px) {
+  nav {
+    padding: 50px;
+  }
+  nav .logo--link {
+    flex-basis: 80%;
+  }
+  nav .links--text {
+    flex-basis: 20%;
+  }
+}
+nav ul a {
+  color: white;
+  text-decoration: none;
+  font-family: "Raleway", sans-serif;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role=list],
+ol[role=list] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+*::before,
+*::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+body {
+  background-color: #181f2a;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.section--leading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0;
+  background: linear-gradient(180deg, #1c2431 0%, #1c2431 75%, #181f2a 75%);
+  position: relative;
+  margin-bottom: 200px;
+  overflow: hidden;
+}
+.section--leading .svg--intro {
+  z-index: 1;
+  padding: 20px;
+}
+.section--leading::before {
+  content: "";
+  background-image: url(./images/bg-curvy-mobile.svg);
+  width: 100vw;
+  height: 100%;
+  position: absolute;
+  background-repeat: no-repeat;
+  background-size: contain;
+  top: 300px;
+}
+.section--leading .wrapper--centering {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+.section--leading .wrapper--centering * + * {
+  margin-top: 20px;
+}
+.section--leading .wrapper--centering h1 {
+  font-family: "Raleway", sans-serif;
+  color: white;
+  text-align: center;
+  z-index: 2;
+  font-size: 1.5rem;
+}
+.section--leading .wrapper--centering p {
+  color: white;
+  text-align: center;
+  font-family: "Open Sans", sans-serif;
+  max-width: 40ch;
+  font-size: 14px;
+}
+.section--leading .wrapper--centering a button {
+  background: linear-gradient(45deg, #65e2d9, #339ecc);
+  border: none;
+  color: white;
+  font-family: "Raleway", sans-serif;
+  width: 250px;
+  height: 50px;
+  border-radius: 30px;
+  cursor: pointer;
+}
+.section--leading .wrapper--centering a button:hover {
+  transition: background 1s linear;
+  background: #65e2d9;
+}
+
+@media screen and (max-width: 500px) {
+  .section--leading::before {
+    top: 270px;
+  }
+}
+@media screen and (min-width: 900px) {
+  .section--leading::before {
+    top: 250px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .section--leading {
+    background: #1c2431;
+  }
+  .section--leading .wrapper--centering h1 {
+    font-size: 2.8rem;
+    max-width: 30ch;
+  }
+  .section--leading .wrapper--centering p {
+    max-width: 60ch;
+    font-size: 1.3rem;
+  }
+  .section--leading::before {
+    background-image: url(./images/bg-curvy-desktop.svg);
+    top: 550px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .section--leading::before {
+    top: 445px;
+  }
+}
+@media screen and (min-width: 1500px) {
+  .section--leading::before {
+    top: 450px;
+  }
+}
+@media screen and (min-width: 1700px) {
+  .section--leading::before {
+    top: 350px;
+  }
+}
+.section--features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+}
+
+.feature {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.feature h1 {
+  color: white;
+  margin-bottom: 10px;
+}
+.feature p {
+  max-width: 35ch;
+  color: white;
+  margin-bottom: 75px;
+}
+.feature img {
+  margin-bottom: 30px;
+}
+
+@media screen and (min-width: 1000px) {
+  .section--features {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+  }
+
+  .feature--access {
+    grid-column: 2/3;
+    grid-row: 1;
+  }
+  .feature--security {
+    grid-column: 3/4;
+    grid-row: 1;
+  }
+  .feature--collaboration {
+    grid-column: 2/3;
+    grid-row: 2;
+  }
+  .feature--any {
+    grid-column: 3/4;
+    grid-row: 2;
+  }
+}
+@media screen and (max-width: 500px) {
+  .section--features {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+}
+.section--productive {
+  padding: 20px;
+  margin-bottom: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.section--productive img {
+  padding: 20px;
+}
+.section--productive h1 {
+  font-size: 1.3rem;
+  color: white;
+  margin-bottom: 25px;
+}
+.section--productive p {
+  color: white;
+  margin-bottom: 15px;
+  max-width: 45ch;
+}
+.section--productive a {
+  color: #65e2d9;
+  text-decoration: none;
+  border-bottom: 1px solid #65e2d9;
+  padding-bottom: 3px;
+  font-size: 14px;
+  position: relative;
+}
+.section--productive a:hover {
+  transition: all 0.4s linear;
+  color: #cccccc;
+  border-color: #cccccc;
+}
+
+@media screen and (min-width: 1200px) {
+  .section--productive {
+    flex-direction: row;
+    justify-content: center;
+  }
+  .section--productive .wrapper {
+    margin-left: 20px;
+  }
+}
+.section--testimonials {
+  display: grid;
+  padding: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 400px));
+  gap: 20px;
+  place-content: center;
+  margin-bottom: 250px;
+}
+.section--testimonials .testimonial {
+  border-radius: 5px;
+  padding: 30px;
+  color: white;
+  background: #202a3c;
+}
+.section--testimonials .testimonial p {
+  max-width: 40ch;
+}
+.section--testimonials .testimonial .wrapper--flex {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+}
+.section--testimonials .testimonial .wrapper--flex h3 {
+  font-size: 13px;
+}
+.section--testimonials .testimonial .wrapper--flex h5 {
+  margin: 0;
+  font-weight: 400;
+}
+.section--testimonials .testimonial .wrapper--flex img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+.section--testimonials .testimonial--Satish {
+  position: relative;
+}
+.section--testimonials .testimonial--Satish::before {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background-image: url(./images/bg-quotes.png);
+  background-repeat: no-repeat;
+  top: -50px;
+  left: 0;
+}
+
+@media screen and (min-width: 1200px) {
+  .section--testimonials {
+    gap: 50px;
+  }
+  .section--testimonials .testimonial--Satish::before {
+    top: -30px;
+    left: -15px;
+    z-index: -1;
+  }
+}
+footer {
+  padding: 20px;
+  padding-top: 200px;
+  background-color: #0b1523;
+  position: relative;
+}
+footer .wrapper--main-flex {
+  display: flex;
+  flex-direction: column;
+}
+footer .logo {
+  margin-bottom: 50px;
+}
+footer .wrapper--flex {
+  margin-bottom: 15px;
+  display: flex;
+}
+footer .wrapper--flex p {
+  color: white;
+  font-family: "Open Sans", sans-serif;
+}
+footer .wrapper--flex.location p {
+  max-width: 30ch;
+}
+footer .wrapper--flex img {
+  width: 15px;
+  height: 20px;
+  margin-right: 20px;
+  margin-top: 5px;
+}
+footer .wrapper--flex.phone {
+  align-items: flex-start;
+}
+footer .wrapper--flex.phone img {
+  width: 15px;
+  height: 15px;
+}
+footer .wrapper--flex.email {
+  align-items: center;
+}
+footer .wrapper--flex.email img {
+  width: 20px;
+  height: 15px;
+}
+footer ul {
+  list-style: none;
+  padding-left: 0;
+  line-height: 2.5;
+}
+footer ul a {
+  color: #cccccc;
+  text-decoration: none;
+}
+footer ul a:hover {
+  color: white;
+  font-weight: 700;
+}
+footer .social-media {
+  width: 125px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+}
+footer .social-media * + * {
+  margin-left: 10px;
+}
+footer .social-media svg {
+  padding: 7px;
+  border: 1px solid white;
+  border-radius: 50%;
+  width: 34px;
+  height: 34px;
+}
+footer .social-media svg:hover {
+  transition: all 0.4s linear;
+  border: 1px solid #65e2d9;
+  fill: #65e2d9 !important;
+}
+footer .signup {
+  background-color: #1c2431;
+  width: 90%;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: -150px;
+  max-width: 600px;
+  right: 50%;
+  transform: translateX(50%);
+}
+footer .signup .wrapper--flex-sbs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+footer .signup h2 {
+  color: white;
+  text-align: center;
+  font-weight: "Raleway", sans-serif;
+  margin-bottom: 10px;
+}
+footer .signup p {
+  text-align: center;
+  color: white;
+  font-family: "Open Sans", sans-serif;
+  margin-bottom: 20px;
+  max-width: 40ch;
+}
+footer .signup input {
+  height: 50px;
+  border-radius: 30px;
+  border: none;
+  padding: 10px;
+  width: 90%;
+}
+footer .signup input:focus-visible {
+  outline: none;
+}
+footer .signup input[placeholder] {
+  font-size: 12px;
+  padding-left: 25px;
+  color: #999999;
+}
+footer .signup input[type=submit] {
+  background-image: linear-gradient(45deg, #65e2d9, #339ecc);
+  margin-top: 25px;
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+}
+footer .signup input[type=submit]:hover {
+  transition: background-image 1s linear;
+  background-image: linear-gradient(#65e2d9, #65e2d9);
+}
+footer .signup .error {
+  color: #ff4242;
+  margin-top: 5%;
+}
+footer .signup .hidden {
+  display: none;
+}
+
+@media screen and (min-width: 750px) {
+  footer .wrapper--main-flex {
+    flex-flow: row wrap;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  footer .wrapper--main-flex ul {
+    margin: 0;
+  }
+  footer .wrapper--main-flex .col5 {
+    margin: 0;
+  }
+}
+@media screen and (min-width: 1200px) {
+  footer {
+    padding: 200px 250px 100px;
+  }
+  footer .signup .wrapper--flex-sbs {
+    flex-direction: row;
+    justify-content: center;
+  }
+  footer .signup .wrapper--flex-sbs input[type=submit] {
+    margin-top: 0;
+    width: 30%;
+    margin-left: 50px;
+  }
+  footer .signup .wrapper--flex-sbs input[type=email] {
+    width: 50%;
+  }
+  footer .signup {
+    max-width: 900px;
+    padding: 50px;
+  }
+  footer .signup p {
+    max-width: 70ch;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */
