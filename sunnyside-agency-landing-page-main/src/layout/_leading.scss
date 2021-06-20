@@ -1,0 +1,41 @@
+@use "../abstracts" as *;
+@use "../base" as *;
+.leading {
+  position: relative;
+  background-image: url(./images/mobile/image-header.jpg);
+  height: 70vh;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  h1 {
+    font-family: $Fraunces;
+    text-transform: uppercase;
+    font-weight: $B;
+    color: $White;
+    text-align: center;
+    font-size: 2.7rem;
+    margin-bottom: 30px;
+    padding: 0 10px;
+  }
+  img {
+    margin: 0 auto;
+    animation: bounce 2s infinite;
+  }
+}
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@media (min-width: 1000px) {
+  .leading {
+    background-image: url(./images/desktop/image-header.jpg);
+    padding-top: 100px;
+  }
+}

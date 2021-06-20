@@ -1,0 +1,508 @@
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:wght@700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@600&display=swap");
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+header {
+  background-color: #3dbeff;
+  padding: 20px;
+}
+header nav {
+  display: flex;
+  height: 5vh;
+  justify-content: space-between;
+  align-items: center;
+}
+header nav img,
+header nav svg {
+  cursor: pointer;
+}
+header nav svg {
+  fill: white;
+}
+
+.mobile-menu {
+  background-color: white;
+  position: absolute;
+  top: 100px;
+  right: 25px;
+  padding: 50px 150px;
+  z-index: 1;
+  opacity: 0;
+  transform: translateX(500px);
+}
+.mobile-menu ul li {
+  list-style: none;
+  margin-top: 20px;
+}
+.mobile-menu ul li button {
+  width: 130px;
+  height: 50px;
+  background-color: #fad400;
+  border: none;
+  border-radius: 35px;
+  text-transform: uppercase;
+  font-family: "Fraunces", serif;
+  font-weight: 700;
+}
+.mobile-menu ul li a {
+  color: #818498;
+  text-decoration: none;
+  font-family: "Barlow", sans-serif;
+  font-size: 18px;
+  display: block;
+  text-align: center;
+}
+.mobile-menu::before {
+  content: "";
+  position: absolute;
+  top: -25px;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-bottom: 25px solid white;
+  border-left: 25px solid transparent;
+}
+
+@media screen and (min-width: 1000px) {
+  header nav {
+    padding: 50px;
+  }
+  header nav svg {
+    display: none;
+  }
+  header .hidden {
+    opacity: 1;
+  }
+  header .mobile-menu {
+    position: static;
+    padding: 0;
+    background: none;
+    flex-basis: 30%;
+    transform: translateX(0);
+  }
+  header .mobile-menu::before {
+    display: none;
+  }
+  header .mobile-menu ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  header .mobile-menu ul * + * {
+    margin-top: 0;
+  }
+  header .mobile-menu ul li {
+    margin-top: 0;
+    padding: 0 20px;
+  }
+  header .mobile-menu ul li a {
+    color: white;
+  }
+  header .mobile-menu ul li button {
+    color: #23303e;
+    background-color: white;
+  }
+  header .mobile-menu ul li button:hover {
+    transition: all 0.4s linear;
+    background-color: hsla(0, 0%, 100%, 0.4);
+    color: white;
+  }
+}
+.leading {
+  position: relative;
+  background-image: url(./images/mobile/image-header.jpg);
+  height: 70vh;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.leading h1 {
+  font-family: "Fraunces", serif;
+  text-transform: uppercase;
+  font-weight: 900;
+  color: white;
+  text-align: center;
+  font-size: 2.7rem;
+  margin-bottom: 30px;
+  padding: 0 10px;
+}
+.leading img {
+  margin: 0 auto;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@media (min-width: 1000px) {
+  .leading {
+    background-image: url(./images/desktop/image-header.jpg);
+    padding-top: 100px;
+  }
+}
+.grid-main {
+  display: grid;
+  grid-template-columns: 1fr;
+  place-items: center;
+}
+
+.transform,
+.standout {
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.transform h1,
+.standout h1 {
+  color: #23303e;
+  text-align: center;
+  font-size: 2rem;
+  font-family: "Fraunces", serif;
+  margin-bottom: 15px;
+}
+.transform p,
+.standout p {
+  font-family: "Barlow", sans-serif;
+  text-align: center;
+  font-weight: 600;
+  color: #818498;
+  margin-bottom: 20px;
+  max-width: 50ch;
+}
+.transform a,
+.standout a {
+  text-decoration: none;
+  color: #23303e;
+  font-family: "Fraunces", serif;
+  text-transform: uppercase;
+  position: relative;
+}
+.transform a:hover::after,
+.standout a:hover::after {
+  transition: all 0.3s linear;
+  background-color: #fad400;
+}
+.transform a::after,
+.standout a::after {
+  content: "";
+  width: 120%;
+  height: 10px;
+  background-color: #fff7c7;
+  position: absolute;
+  bottom: -1px;
+  left: -10px;
+  z-index: -1;
+  border-radius: 30px;
+}
+
+.standout a::after {
+  transition: all 0.3s linear;
+  background-color: #ffd2cc;
+}
+.standout a:hover::after {
+  background-color: #fe7867;
+}
+
+.egg,
+.glass {
+  width: 100%;
+  height: 100%;
+}
+.egg picture > img,
+.glass picture > img {
+  width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+}
+
+@media screen and (min-width: 1000px) {
+  .grid-main {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .transform {
+    grid-column: 1/2;
+    grid-row: 1;
+    display: block;
+  }
+  .transform h1,
+  .transform p {
+    text-align: left;
+  }
+  .transform h1 {
+    font-size: 3rem;
+  }
+
+  .standout {
+    display: block;
+  }
+  .standout h1,
+  .standout p {
+    text-align: left;
+  }
+  .standout h1 {
+    font-size: 2.5rem;
+  }
+}
+.photography .wrapper p {
+  color: #19536b;
+}
+
+.photography .wrapper h1 {
+  color: #19536b;
+}
+
+.graphic,
+.photography {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+.graphic picture,
+.photography picture {
+  width: 100%;
+}
+.graphic picture img,
+.photography picture img {
+  width: 100%;
+  max-height: 700px;
+  object-fit: cover;
+}
+.graphic h1,
+.photography h1 {
+  color: #25564b;
+  text-align: center;
+  font-size: 2rem;
+  font-family: "Fraunces", serif;
+  margin-bottom: 15px;
+}
+.graphic p,
+.photography p {
+  font-family: "Barlow", sans-serif;
+  text-align: center;
+  font-weight: 600;
+  color: #25564b;
+  margin-bottom: 20px;
+  max-width: 50ch;
+}
+.graphic .wrapper,
+.photography .wrapper {
+  position: absolute;
+  bottom: 0;
+}
+
+.testimonials {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 50px;
+}
+.testimonials .testimonial {
+  margin-top: 50px;
+}
+.testimonials h1 {
+  color: #a7abae;
+  font-family: "Fraunces", serif;
+  text-transform: uppercase;
+  font-size: 18px;
+  letter-spacing: 5px;
+}
+.testimonials .logo {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #818498;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  background-position: center;
+  background-size: cover;
+}
+.testimonials .emily .logo {
+  background-image: url(./images/image-emily.jpg);
+}
+.testimonials .thomas .logo {
+  background-image: url(./images/image-thomas.jpg);
+}
+.testimonials .jennie .logo {
+  background-image: url(./images/image-jennie.jpg);
+}
+.testimonials p {
+  font-family: "Barlow", sans-serif;
+  color: #5a636c;
+  margin-bottom: 30px;
+  max-width: 35ch;
+}
+.testimonials h2 {
+  font-family: "Fraunces", serif;
+  color: #23303e;
+  font-size: 18px;
+}
+.testimonials h5 {
+  color: #a7abae;
+  font-family: "Barlow", sans-serif;
+}
+
+@media screen and (min-width: 1000px) {
+  .testimonials {
+    padding: 150px 100px;
+  }
+  .testimonials h1 {
+    margin-bottom: 50px;
+  }
+  .testimonials .flex {
+    display: flex;
+    flex-direction: row;
+  }
+  .testimonials .flex .testimonial {
+    padding: 0 40px;
+  }
+}
+.gallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+
+@media screen and (min-width: 768px) {
+  .gallery {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+  }
+  .gallery * {
+    width: 100%;
+    height: 100%;
+  }
+}
+footer {
+  background-color: #91d4c6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 100px 20px;
+}
+footer * {
+  cursor: pointer;
+}
+footer svg {
+  fill: #458c7e;
+  margin-bottom: 20px;
+}
+footer ul {
+  list-style: none;
+  font-family: "Barlow", sans-serif;
+  display: flex;
+  color: #458c7e;
+  margin-bottom: 50px;
+}
+footer ul * + * {
+  padding-left: 20px;
+}
+footer ul li:hover {
+  transition: all 0.3s linear;
+  color: white;
+}
+footer .sm-icons {
+  display: flex;
+}
+footer .sm-icons * + * {
+  padding-left: 20px;
+}
+footer .sm-icons img {
+  fill: white;
+}
+
+/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,109 @@
+@use "../abstracts" as *;
+@use "../base" as *;
+body {
+  overflow-x: hidden;
+}
+header {
+  background-color: $Navbar;
+  padding: 20px;
+  nav {
+    display: flex;
+    height: 5vh;
+    justify-content: space-between;
+    align-items: center;
+    img,
+    svg {
+      cursor: pointer;
+    }
+    svg {
+      fill: white;
+    }
+  }
+}
+
+.mobile-menu {
+  background-color: $White;
+  position: absolute;
+  top: 100px;
+  right: 25px;
+  padding: 50px 150px;
+  z-index: 1;
+  opacity: 0;
+  transform: translateX(500px);
+  ul {
+    li {
+      list-style: none;
+      margin-top: 20px;
+      button {
+        width: 130px;
+        height: 50px;
+        background-color: $Yellow;
+        border: none;
+        border-radius: 35px;
+        text-transform: uppercase;
+        font-family: $Fraunces;
+        font-weight: $Sb;
+      }
+      a {
+        color: $Dark-grayish-blue;
+        text-decoration: none;
+        font-family: $Barlow;
+        font-size: $Fs;
+        display: block;
+        text-align: center;
+      }
+    }
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    top: -25px;
+    right: 0;
+    width: 0;
+    height: 0;
+    border-bottom: 25px solid $White;
+    border-left: 25px solid transparent;
+  }
+}
+@media screen and (min-width: 1000px) {
+  header {
+    nav {
+      padding: 50px;
+      svg {
+        display: none;
+      }
+    }
+    .hidden {
+      opacity: 1;
+    }
+    .mobile-menu {
+      position: static;
+      padding: 0;
+      background: none;
+      flex-basis: 30%;
+      transform: translateX(0);
+      &::before {
+        display: none;
+      }
+      ul {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        * + * {
+          margin-top: 0;
+        }
+        li {
+          margin-top: 0;
+          padding: 0 20px;
+          a {
+            color: white;
+          }
+          button {
+            color: $Very-dark-desaturated-blue;
+            background-color: $White;
+          }
+        }
+      }
+    }
+  }
+}

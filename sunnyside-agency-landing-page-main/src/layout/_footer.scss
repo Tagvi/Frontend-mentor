@@ -1,0 +1,39 @@
+@use "../abstracts/" as *;
+@use "../base/" as *;
+footer {
+  background-color: hsl(167, 44%, 70%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 100px 20px;
+  * {
+    cursor: pointer;
+  }
+  svg {
+    fill: $Dark-moderate-cyan;
+    margin-bottom: 20px;
+  }
+  ul {
+    list-style: none;
+    font-family: $Barlow;
+    display: flex;
+    color: $Dark-moderate-cyan;
+    * + * {
+      padding-left: 20px;
+    }
+    li:hover {
+      transition: all 0.3s linear;
+      color: $White;
+    }
+    margin-bottom: 50px;
+  }
+  .sm-icons {
+    display: flex;
+    * + * {
+      padding-left: 20px;
+    }
+    img {
+      fill: white;
+    }
+  }
+}

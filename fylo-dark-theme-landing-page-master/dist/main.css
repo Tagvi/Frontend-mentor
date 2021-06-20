@@ -74,8 +74,8 @@ dd {
 }
 
 /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
-ul[role=list],
-ol[role=list] {
+ul[role="list"],
+ol[role="list"] {
   list-style: none;
 }
 
@@ -118,8 +118,8 @@ select {
   }
 
   *,
-*::before,
-*::after {
+  *::before,
+  *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
@@ -521,14 +521,14 @@ footer .signup input[placeholder] {
   padding-left: 25px;
   color: #999999;
 }
-footer .signup input[type=submit] {
+footer .signup input[type="submit"] {
   background-image: linear-gradient(45deg, #65e2d9, #339ecc);
   margin-top: 25px;
   color: white;
   font-weight: 700;
   cursor: pointer;
 }
-footer .signup input[type=submit]:hover {
+footer .signup input[type="submit"]:hover {
   transition: background-image 1s linear;
   background-image: linear-gradient(#65e2d9, #65e2d9);
 }
@@ -561,12 +561,12 @@ footer .signup .hidden {
     flex-direction: row;
     justify-content: center;
   }
-  footer .signup .wrapper--flex-sbs input[type=submit] {
+  footer .signup .wrapper--flex-sbs input[type="submit"] {
     margin-top: 0;
     width: 30%;
     margin-left: 50px;
   }
-  footer .signup .wrapper--flex-sbs input[type=email] {
+  footer .signup .wrapper--flex-sbs input[type="email"] {
     width: 50%;
   }
   footer .signup {
@@ -577,5 +577,3 @@ footer .signup .hidden {
     max-width: 70ch;
   }
 }
-
-/*# sourceMappingURL=main.css.map */
