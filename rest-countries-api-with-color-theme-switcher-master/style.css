@@ -1,0 +1,365 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap");
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+:root {
+  --Font-family: "Nunito Sans", sans-serif;
+  --Light: 300;
+  --Medium: 600;
+  --Bold: 800;
+}
+.light {
+  --Text: hsl(200, 15%, 8%);
+  --Elements: hsl(0, 0%, 100%);
+  --Background: hsl(0, 0%, 98%);
+  --Input: hsl(0, 0%, 52%);
+  --InputBg: hsl(0, 0%, 100%);
+  --Shadow: 2px 2px 5px hsl(0, 0%, 86%);
+}
+.dark {
+  --Text: hsl(0, 0%, 100%);
+  --Elements: hsl(209, 23%, 22%);
+  --Background: hsl(207, 26%, 17%);
+  --Input: hsl(0, 0%, 100%);
+  --Shadow: 2px 2px 5px hsla(0, 0%, 0%, 15%);
+}
+body {
+  background-color: var(--Background);
+  font-family: var(--Font-family);
+  font-size: 14px;
+  color: var(--Text);
+  overflow-x: hidden;
+}
+nav {
+  width: 100%;
+  height: 8vh;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--Elements);
+  box-shadow: var(--Shadow);
+  z-index: 2;
+}
+nav h1 {
+  font-weight: var(--Bold);
+  cursor: pointer;
+}
+a {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  font-weight: var(--Medium);
+  color: var(--Text);
+}
+a ion-icon {
+  padding-right: 10px;
+}
+main {
+  padding: 20px;
+}
+input {
+  height: 100%;
+  width: 100%;
+  border: none;
+  background: none;
+  padding-left: 10px;
+  color: var(--Input);
+}
+input::placeholder {
+  color: var(--Input);
+}
+input:focus-within,
+select:focus-within {
+  outline: none;
+}
+/* removes clear button for search  */
+input[type="search" i]::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+}
+.search-box {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 50px;
+  padding: 0 20px;
+  border-radius: 5px;
+  background-color: var(--Elements);
+  box-shadow: var(--Shadow);
+  margin-bottom: 50px;
+  color: var(--Input);
+  max-width: 800px;
+}
+.select {
+  display: inline-flex;
+  width: 150px;
+  height: 50px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--Shadow);
+  border-radius: 5px;
+  background-color: var(--Elements);
+  position: relative;
+}
+.filters {
+  margin-bottom: 50px;
+}
+.select p {
+  display: flex;
+  align-items: center;
+  font-weight: var(--Light);
+  /* the icon is affected by the line-height and it is around 1 px off so I removed line height as it's not nescessary */
+  line-height: 0;
+  cursor: pointer;
+}
+.select p ion-icon {
+  padding-left: 10px;
+}
+
+.options {
+  width: 150px;
+  top: 55px;
+  border-radius: 5px;
+  padding: 10px 20px;
+  color: var(--Text);
+  background-color: var(--Elements);
+  position: absolute;
+  font-weight: var(--Light);
+}
+.options *:hover {
+  font-weight: var(--Bold);
+}
+.clear {
+  height: 50px;
+  border: none;
+  background-color: var(--Elements);
+  padding: 15px;
+  box-shadow: var(--Shadow);
+  border-radius: 5px;
+  font-weight: var(--Light);
+  cursor: pointer;
+  margin-left: 10px;
+  color: var(--Text);
+}
+.countries {
+  display: grid;
+  width: 100%;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 0.8fr));
+  gap: 50px;
+}
+.container {
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: var(--Elements);
+  box-shadow: var(--Shadow);
+  margin-bottom: 50px;
+  color: var(--Text);
+}
+.container .info {
+  padding: 30px 20px;
+}
+.container .info h3 {
+  margin-bottom: 10px;
+}
+.container .info p {
+  font-weight: var(--Medium);
+}
+.container .info p span {
+  font-weight: var(--Light);
+}
+.extrainfo {
+  animation: fade-in 0.5s linear;
+  position: absolute;
+  width: 100%;
+  background-color: var(--Background);
+  top: calc(10vh + 5px);
+  padding: 40px;
+}
+.extrainfo .back {
+  line-height: 0;
+  display: flex;
+  align-items: center;
+  border: none;
+  background-color: var(--Elements);
+  padding: 15px 30px;
+  box-shadow: var(--Shadow);
+  border-radius: 5px;
+  margin-bottom: 25px;
+  color: var(--Text);
+  cursor: pointer;
+  width: 120px;
+}
+.extrainfo .back ion-icon {
+  margin-right: 10px;
+}
+img {
+  width: 100%;
+  object-fit: cover;
+  margin-bottom: 25px;
+  max-height: 450px;
+  max-width: 700px;
+  aspect-ratio: 16/9;
+}
+.extrainfo h1 {
+  margin-bottom: 20px;
+}
+.extrainfo p {
+  margin-bottom: 10px;
+  font-weight: var(--Medium);
+}
+.extrainfo span {
+  font-weight: var(--Light);
+}
+.extrainfo .wrapper-2 {
+  margin-top: 25px;
+}
+.extrainfo h2 {
+  margin-bottom: 10px;
+}
+.bordercountries button {
+  background-color: var(--Elements);
+  border: none;
+  border-radius: 5px;
+  box-shadow: var(--Shadow);
+  width: 100px;
+  height: 50px;
+  margin: 10px;
+  padding: 10px 0;
+  cursor: pointer;
+  color: var(--Text);
+}
+.bordercountries {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+.wrapper-5 {
+  margin-top: 50px;
+}
+@keyframes fade-in {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@media screen and (min-width: 768px) {
+  .extra-info {
+    display: flex;
+  }
+  .extra-info .wrapper-4 {
+    margin-left: 100px;
+  }
+}
+@media screen and (min-width: 1300px) {
+  .filters {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .search-box {
+    margin-bottom: 0;
+  }
+  main {
+    padding: 20px 100px;
+  }
+  .extrainfo .wrapper {
+    display: flex;
+    justify-content: space-around;
+  }
+  .extrainfo img {
+    margin-right: 50px;
+  }
+  .extra-info {
+    display: flex;
+    justify-content: space-between;
+  }
+  .wrapper-5 {
+    display: flex;
+  }
+  .extra-info .wrapper-4 {
+    margin-left: 0;
+  }
+}
+/* hidden has to be on the bottom to avoid all the specificity issues */
+.hidden {
+  display: none;
+}
