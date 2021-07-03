@@ -13,7 +13,9 @@ async function showcountries(url) {
   const responseData = await response.json();
   return responseData;
 }
-showcountries("https://restcountries.eu/rest/v2/all")
+showcountries(
+  "https://restcountries.eu/rest/v2/all?fields=name;capital;flag;population;region"
+)
   .then((data) => displayCountries(data).then(moreInfo()))
   .catch((err) => console.log(err));
 // Display the countries
@@ -25,7 +27,7 @@ const displayCountries = async (data) => {
     <div class="container">
         <img src="${country.flag}" alt = "${country.name} flag" />
         <div class="info">
-            <h3>${country.name.replace(/ *\([^)]*\) */g, "")}</h3>
+            <h2>${country.name.replace(/ *\([^)]*\) */g, "")}</h2>
             <p class="population">Population: <span>${country.population.toLocaleString()}</span></p>
             <p class="region">Region: <span>${country.region}</span></p>
             <p class="capital">Capital: <span>${country.capital}</span></p>
@@ -52,7 +54,7 @@ search.addEventListener("keydown", () => {
   removeAllHiddenCountries();
   countries.forEach((country) => {
     //hide elements
-    let countryname = country.querySelector("h3").textContent.toLowerCase();
+    let countryname = country.querySelector("h2").textContent.toLowerCase();
     if (countryname.indexOf(filter) === -1) {
       // you would need 2 backspaces after 1 letter left in the searchbox to reset so I fixed it
       if (filter.length === 1) {
@@ -114,8 +116,10 @@ const moreInfo = () => {
   let countries = document.querySelectorAll(".container");
   countries.forEach((container) => {
     container.addEventListener("click", () => {
-      const name = container.querySelector("h3").textContent;
-      showcountries(`https://restcountries.eu/rest/v2/name/${name}`)
+      const name = container.querySelector("h2").textContent;
+      showcountries(
+        `https://restcountries.eu/rest/v2/name/${name}?fields=name;capital;currencies;nativeName;population;region;subregion;topLevelDomain;languages;flag;borders`
+      )
         .then((data) => {
           displayMoreInfo(data);
         })
@@ -192,13 +196,13 @@ const displayMoreInfo = (data) => {
   document.body.appendChild(countryElem);
   //the code grabs the bordering countries which returns countrycodes and then fetches the names
   data.borders.forEach((code) => {
-    showcountries(`https://restcountries.eu/rest/v2/alpha/${code}?fields=name;`)
+    showcountries(`https://restcountries.eu/rest/v2/alpha/${code}?fields=name`)
       .then((data) => {
         const button = document.createElement("button");
         button.textContent = data.name.replace(/ *\([^)]*\) */g, "");
         button.addEventListener("click", () => {
           showcountries(
-            `https://restcountries.eu/rest/v2/name/${button.textContent}`
+            `https://restcountries.eu/rest/v2/name/${button.textContent}?fields=name;capital;currencies;nativeName;population;region;subregion;topLevelDomain;languages;flag;borders`
           )
             .then((data) => {
               document.querySelector(".extrainfo").remove();
