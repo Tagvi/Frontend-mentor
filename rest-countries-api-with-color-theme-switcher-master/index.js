@@ -25,7 +25,9 @@ const displayCountries = async (data) => {
     //Some country names come with useless text indide parentheses so the regex below removes them
     const container = `
     <div class="container">
-        <img src="${country.flag}" alt = "${country.name} flag" />
+        <img src="${country.flag}" alt = "${
+      country.name
+    } flag" loading="lazy" />
         <div class="info">
             <h2>${country.name.replace(/ *\([^)]*\) */g, "")}</h2>
             <p class="population">Population: <span>${country.population.toLocaleString()}</span></p>
