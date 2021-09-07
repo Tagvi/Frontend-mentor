@@ -232,8 +232,9 @@ input[type="search" i]::-webkit-search-cancel-button {
 .container .info {
   padding: 30px 20px;
 }
-.container .info h3 {
+.container .info h2 {
   margin-bottom: 10px;
+  font-size: 18px;
 }
 .container .info p {
   font-weight: var(--Medium);
@@ -354,9 +355,6 @@ img {
   }
   .wrapper-5 {
     display: flex;
-  }
-  .extra-info .wrapper-4 {
-    margin-left: 0;
   }
 }
 /* hidden has to be on the bottom to avoid all the specificity issues */
