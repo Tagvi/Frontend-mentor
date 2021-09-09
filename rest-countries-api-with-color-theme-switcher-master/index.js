@@ -35,7 +35,7 @@ select.addEventListener(
 );
 
 search.addEventListener(
-  'keydown',
+  'input',
   () => {
     const filter = search.value.toLowerCase();
     const countries = qsAll('.container');
