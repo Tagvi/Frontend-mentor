@@ -21,7 +21,7 @@ document.body.className = theme;
 localStorage.setItem('theme', theme);
 changeThemeButton();
 fetchData(
-  'https://restcountries.eu/rest/v2/all?fields=name;capital;flag;population;region'
+  'https://rescountries.eu/rest/v2/all?fields=name;capital;flag;population;region'
 )
   .then((data) => displayCountries(data))
   .catch((err) => console.log(err));
@@ -35,7 +35,7 @@ select.addEventListener(
 );
 
 search.addEventListener(
-  'keydown',
+  'input',
   () => {
     const filter = search.value.toLowerCase();
     const countries = qsAll('.container');

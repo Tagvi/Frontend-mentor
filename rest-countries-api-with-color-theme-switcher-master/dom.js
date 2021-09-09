@@ -4,7 +4,7 @@ const displayCountries = (data) => {
   data.forEach(({ flag, name, population, region, capital }) => {
     const country = `
     <div class="container">
-        <img src="${flag}" alt = "${name} flag" />
+        <img src="${flag}" alt = "${name} flag" loading="lazy" />
         <div class="info">
             <h2>${name.replace(/ *\([^)]*\) */g, '')}</h2>
             <p class="population">Population: <span>${population.toLocaleString()}</span></p>
