@@ -21,7 +21,7 @@ document.body.className = theme;
 localStorage.setItem('theme', theme);
 changeThemeButton();
 fetchData(
-  'https://rescountries.eu/rest/v2/all?fields=name;capital;flag;population;region'
+  'https://restcountries.com/v2/all?fields=name,capital,region,population,flag'
 )
   .then((data) => displayCountries(data))
   .catch((err) => console.log(err));
