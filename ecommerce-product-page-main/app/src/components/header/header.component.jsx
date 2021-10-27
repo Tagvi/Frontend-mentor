@@ -13,14 +13,8 @@ const Header = () => {
   function openMenu() {
     setMenuOpen(true);
   }
-  const {
-    itemCount,
-    cartHidden,
-    toggleCartHidden,
-    total,
-    cartItems,
-    clearItemFromCart,
-  } = useContext(CartContext);
+  const { itemCount, cartHidden, toggleCartHidden, cartItems } =
+    useContext(CartContext);
   return (
     <div className="bg-white p-5 lg:px-40 relative 2xl:px-96">
       <div className="flex items-center justify-between">
