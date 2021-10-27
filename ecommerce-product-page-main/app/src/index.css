@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+::selection {
+  background: hsl(26, 100%, 55%);
+  color: black;
+}
+
+@layer utilities {
+  .ellipsis {
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+  }
+  @responsive {
+    .border-bottom {
+      border-bottom: 1px solid hsl(220, 14%, 75%);
+    }
+    .left-unset {
+      left: unset;
+    }
+    .right-5p {
+      right: 5%;
+    }
+  }
+  @variants hover {
+    .logo-hover {
+      border: 2px solid hsl(26, 100%, 55%);
+    }
+  }
+
+  .max-width-text {
+    max-width: 70ch;
+  }
+  .shrink-custom {
+    flex-shrink: 1.5;
+  }
+}
+@layer components {
+  .cart {
+    position: absolute;
+    top: calc(5rem + 20px);
+    width: clamp(300px, 90%, 400px);
+    background: white;
+    z-index: 50;
+    border-radius: 10px;
+    padding: 20px;
+    border: 1px solid hsl(220, 14%, 75%);
+  }
+  @responsive {
+    .navbar-item {
+      cursor: pointer;
+      position: relative;
+    }
+    .navbar-item::after {
+      content: '';
+      width: 0;
+      height: 3px;
+      background: hsl(26, 100%, 55%);
+      position: absolute;
+      top: 3.3rem;
+      left: 0;
+      transition: width 0.2s linear;
+    }
+    .navbar-item:hover::after {
+      width: 100%;
+    }
+  }
+}
