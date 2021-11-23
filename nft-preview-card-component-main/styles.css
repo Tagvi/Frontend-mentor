@@ -98,6 +98,7 @@ body main .info-flex > * img {
 }
 body main .info-flex .price {
   color: #00fff7;
+  font-weight: 700;
 }
 body main .info-flex .time-left {
   color: #8bacda;
