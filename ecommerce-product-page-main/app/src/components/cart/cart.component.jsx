@@ -27,3 +27,4 @@ const Cart = ({ cartItems, cartHidden }) => {
   );
 };
 export default Cart;
+
